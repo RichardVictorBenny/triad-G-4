@@ -4,8 +4,49 @@
 
 {% block content %}
 
+<!--  
+<div class="govuk-cookie-banner" data-nosnippet role="region" aria-label="Cookies on GOV.UK">
+    <div class="govuk-cookie-banner__message govuk-width-container">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h2 class="govuk-cookie-banner__heading govuk-heading-m">
+            Cookies on GOV.UK
+          </h2>
+          <div class="govuk-cookie-banner__content">
+            <p class="govuk-body">We use some essential cookies to make this service work.</p>
+            <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-button-group">
+        <button type="button" class="govuk-button" data-module="govuk-button">
+          Accept analytics cookies
+        </button>
+        <button type="button" class="govuk-button" data-module="govuk-button">
+          Reject analytics cookies
+        </button>
+        <a class="govuk-link" href="#">View cookies</a>
+      </div>
+    </div>
+  </div> 
+
+-->
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
 
 
     <h1 class="govuk-heading-xl">
@@ -13,15 +54,28 @@
     </h1>
 
     <p> 
-      As per the new legislation regarding e-scooters, users have to register them with <strong> DVLA </strong>.
+      As per the new legislation regarding e-scooters, you are required to register any E-Scooters with the <strong> DVLA </strong>.
     </p>
       
 
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        You are required by law to register your E-Scooter
+      </strong>
+    </div>
+
+      <!-- <a href="/start">   --> 
     <p>
-      <a href="/start"> 
-        Go to start page
-      </a>
+      This service is avalible from 7am to 7pm
     </p>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Register E-Scooter
+    </button>
+
+
   </div>
 </div>
 
