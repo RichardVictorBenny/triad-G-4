@@ -14,11 +14,21 @@ router.post('/personal-details-answer', function(req, res) {
     var surName = req.session.data['sur-name']
     var dateOfbirth = req.session.data['date-of-birth']
 
-    console.log(dateOfbirth)
 
-    if(givenName === "" && surName === ""){
+    if(givenName === "" || surName === ""){
         res.redirect('/ineligible-personal-details')
     } else (
         res.redirect('/driving-license')
     )
+})
+
+router.post('/uploaded-file-driving-licence', function(req, res){
+    var fileName = req.session.data['file-driving-licence'].toString()
+
+
+    if(fileName.toString().split(".")[1] !== "pdf"){
+        res.redirect('/ineligible-file-driving-licence')
+    } else {
+        res.redirect('/file-compliance')
+    }
 })
