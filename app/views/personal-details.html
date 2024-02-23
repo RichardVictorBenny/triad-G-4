@@ -22,7 +22,7 @@
 
       <form class="form" action="/personal-details-answer" method="post">
 
-        <div class="govuk-form-group">
+        <div class="govuk-form-group" id="personal-details-given-name">
           <h1 class="govuk-label-wrapper">
             <label class="govuk-label govuk-label--m" for="given-name">
               Enter your given name(s):
@@ -39,25 +39,6 @@
           </h1>
           <input class="govuk-input" id="sur-name" name="sur-name" value="{{data['sur-name']}}" type="text">
         </div>
-
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
-{{ govukDateInput({
-  id: "date-of-birth",
-  name: "date-of-birth",
-  namePrefix: "date-of-birth",
-  value: data['date-of-birth'],
-  fieldset: {
-    legend: {
-      text: "Enter date of birth: ",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "For example, 27 3 2007"
-  }
-}) }}
 
         {{ govukButton({
           text: "Continue"

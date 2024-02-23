@@ -12,12 +12,12 @@ const router = govukPrototypeKit.requests.setupRouter()
 router.post('/personal-details-answer', function(req, res) {
     var givenName = req.session.data['given-name']
     var surName = req.session.data['sur-name']
-    var dateOfbirth = req.session.data['date-of-birth']
+    var dateOfbirth = req.session.data['date-of-birth-day']
 
     console.log(dateOfbirth)
 
     if(givenName === "" && surName === ""){
-        res.redirect('/ineligible-personal-details')
+        
     } else (
         res.redirect('/driving-license')
     )
