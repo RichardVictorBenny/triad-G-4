@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Upload evidence of payment of tax
+      </h1>
+      <div class="govuk-inset-text">
+        <p> E-scooters are generally exempt from vehicle tax. </p> 
+        <p> If you are exempt, upload <a href="#"> form V10 </a>. </p>
+      </div>
+
+      <form class="form" action="/file-mot" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-vehicle-tax">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-vehicle-tax" name="file-vehicle-tax" type="file">
+        </div>
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
