@@ -24,16 +24,14 @@
         To view all your answers, <a href="/check-answers">click here</a>
       </p>
 
-      <form class="form" action="/file-compliance" method="post">
+      <form class="form" action="/uploaded-file-driving-licence" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-driving-licence">
             Upload here.
           </label>
-          <p id="file-upload-1-error" class="govuk-error-message">
-    <span class="govuk-visually-hidden">Error:</span> The CSV must be smaller than 2MB
-  </p>
-          <input class="govuk-file-upload" id="file-driving-license" name="file-driving-license" type="file">
+          
+          <input class="govuk-file-upload" id="file-driving-licence" name="file-driving-licence" type="file">
         </div>
 
         {{ govukButton({
