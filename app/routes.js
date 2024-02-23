@@ -15,12 +15,10 @@ router.post('/personal-details-answer', function(req, res) {
     var dateOfbirth = req.session.data['date-of-birth']
 
     console.log(dateOfbirth)
-    console.log(givenName)
-    console.log(surName)
 
     if(givenName === "" && surName === ""){
         res.redirect('/ineligible-personal-details')
     } else (
-        res.redirect('/')
+        res.redirect('/driving-license')
     )
 })
