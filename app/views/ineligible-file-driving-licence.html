@@ -20,12 +20,15 @@
         Upload Driving license
       </h1>
 
-      <form class="form" action="/uploaded-file-driving-licence" method="post">
+      <form class="form govuk-form-group--error" action="/uploaded-file-driving-licence" method="post">
 
         <div class="govuk-form-group">
           <label class="govuk-label" for="file-driving-licence">
             Upload here.
           </label>
+          <p id="file-upload-1-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> The file must be in ".pdf" format.
+  </p>
           
           <input class="govuk-file-upload" id="file-driving-licence" name="file-driving-licence" type="file">
         </div>
