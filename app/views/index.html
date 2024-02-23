@@ -35,8 +35,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-
-
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
@@ -48,7 +46,6 @@
       </p>
     </div>
 
-
     <h1 class="govuk-heading-xl">
       {{ serviceName }}
     </h1>
@@ -57,7 +54,6 @@
       As per the new legislation regarding e-scooters, you are required to register any E-Scooters with the <strong> DVLA </strong>.
     </p>
       
-
     <div class="govuk-warning-text">
       <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
       <strong class="govuk-warning-text__text">
@@ -66,7 +62,6 @@
       </strong>
     </div>
 
-      <!-- <a href="/start">   --> 
     <p>
       This service is avalible from 7am to 7pm
     </p>
@@ -75,9 +70,12 @@
       Before you start, please ensure you have your drivers license, in date vehcle tax and MOT certificate readily avalible   
     </p>
 
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Register E-Scooter
-    </button>
+
+    {{ govukButton({
+      text: "Register E-Scooter",
+      href: "/start",
+      isStartButton: true
+    }) }}
 
 
   </div>
