@@ -40,25 +40,44 @@
           <input class="govuk-input" id="sur-name" name="sur-name" value="{{data['sur-name']}}" type="text">
         </div>
 
-        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-
-{{ govukDateInput({
-  id: "date-of-birth",
-  name: "date-of-birth",
-  namePrefix: "date-of-birth",
-  value: data['date-of-birth'],
-  fieldset: {
-    legend: {
-      text: "Enter date of birth: ",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  hint: {
-    text: "For example, 27 3 2007"
-  }
-}) }}
-
+                <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                When was your passport issued?
+              </h1>
+            </legend>
+            <div id="passport-issued-hint" class="govuk-hint">
+              For example, 27 3 2007
+            </div>
+            <div class="govuk-date-input" id="date-of-birth">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-day" value="{{data['date-of-birth-day']}}" name="date-of-birth-day" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="date-of-birth-month" value="{{data['date-of-birth-month']}}" name="date-of-birth-month" type="text" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="date-of-birth-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="date-of-birth-year" value="{{data['date-of-birth-year']}}" name="date-of-birth-year" type="text" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
         {{ govukButton({
           text: "Continue"
         }) }}
