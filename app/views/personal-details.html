@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Personal details
+      </h1>
+
+      <form class="form" action="/personal-details-answer" method="post">
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="given-name">
+              Enter your given name(s):
+            </label>
+          </h1>
+          <input class="govuk-input" id="given-name" name="given-name" value="{{data['given-name']}}" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--m" for="sur-name">
+              Enter surname:
+            </label>
+          </h1>
+          <input class="govuk-input" id="sur-name" name="sur-name" value="{{data['sur-name']}}" type="text">
+        </div>
+
+        {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{{ govukDateInput({
+  id: "date-of-birth",
+  name: "date-of-birth",
+  namePrefix: "date-of-birth",
+  value: data['date-of-birth'],
+  fieldset: {
+    legend: {
+      text: "Enter date of birth: ",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: "For example, 27 3 2007"
+  }
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
